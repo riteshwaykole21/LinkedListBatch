@@ -15,7 +15,8 @@ namespace LinkedList
             while (flag)
             {
                 Console.WriteLine("1 Add");
-                Console.WriteLine("2: Display");
+                Console.WriteLine("2: AddFirst");
+                Console.WriteLine("3: Display");
                 Console.WriteLine("Enter a Option");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch(option)
@@ -26,11 +27,16 @@ namespace LinkedList
                         linkedList.Add(70);
                         break;
                     case 2:
+                        linkedList.Addfirst(70);
+                        linkedList.Addfirst(30);
+                        linkedList.Addfirst(56);
+                        break;
+                    case 3:
                         linkedList.Display();
                             break;
                     default: 
                         Console.WriteLine("Please Enter Correct Option");
-                        break;
+                         break;
                 }
             }
         }

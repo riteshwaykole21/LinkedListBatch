@@ -25,6 +25,12 @@ namespace LinkedList
                 temp.next = node;
             }
         }
+        public void Addfirst(int data)
+        {
+            Node newNode = new Node(data);
+            newNode.next = head;
+            head = newNode;
+        }
         public void Display()
         {
             Node temp = this.head;
@@ -38,7 +44,7 @@ namespace LinkedList
                 Console.WriteLine(temp.data + " ");
                 temp = temp.next;
             }
-            Console.WriteLine("\n");
+               Console.WriteLine("\n");
         }
     }
 }
