@@ -58,6 +58,7 @@ namespace LinkedList
                     case 6:
                         linkedList.Display();
                         break;
+
                     default: Console.WriteLine("Please Enter Currect Option"); break;
                 }
             }

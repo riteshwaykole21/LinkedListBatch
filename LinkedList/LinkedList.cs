@@ -36,7 +36,6 @@ namespace LinkedList
                 newNode.Next = headNode;
                 headNode = newNode;
             }
-
         }
         public void AddLast(int data)
         {
@@ -93,8 +92,6 @@ namespace LinkedList
                 Console.WriteLine("the last element is deleted");
             }
         }
-
-
         public void Display()
         {
             Node tempNode = this.headNode;
