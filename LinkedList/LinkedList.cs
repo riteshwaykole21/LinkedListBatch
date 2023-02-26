@@ -8,43 +8,74 @@ namespace LinkedList
 {
     public class LinkedList
     {
-        public Node head;
+         
+        public Node headNode;
+        public Node tailNode;
         public void Add(int data)
         {
-            Node node = new Node( data);
-            node.data = data;
-            if(this.head == null)
-                this.head = node;
+            Node newNode = new Node(data);
+
+            if (this.headNode == null)
+                this.headNode = newNode;
             else
             {
-                Node temp = head;
-                while (temp.next != null)
+                Node tempNode = headNode;
+                while (tempNode.Next != null)
                 {
-                    temp = temp.next;
+                    tempNode = tempNode.Next;
                 }
-                temp.next = node;
+                tempNode.Next = newNode;
             }
         }
-        public void Addfirst(int data)
+        public void AddFirst(int data)
         {
             Node newNode = new Node(data);
-            newNode.next = head;
-            head = newNode;
+            newNode.Next = headNode;
+            headNode = newNode;
         }
+        public void AddLast(int data)
+        {
+            Node newNode = new Node(data);
+            if (headNode == null)
+                tailNode = headNode = newNode;
+            else
+            {
+                tailNode.Next = newNode;
+                tailNode = newNode;
+            }
+        }
+        public void ReversOrder(int data)
+        {
+            Node newNode = new Node(data);
+
+            if (this.headNode == null)
+                this.headNode = newNode;
+            else
+            {
+                Node tempNode = this.headNode;
+                headNode = newNode;
+                headNode.Next = tempNode;
+            }
+            Console.WriteLine(newNode.Data + " is inserted into the linked list");
+        }
+
         public void Display()
         {
-            Node temp = this.head;
-            if (temp == null)
+            Node tempNode = this.headNode;
+            if (tempNode == null)
             {
-                Console.WriteLine("Linked List Is Empty");
+                Console.WriteLine("Linked list is empty");
             }
-            Console.WriteLine("Linked List is:  ");
-            while (temp != null)
+            else
             {
-                Console.WriteLine(temp.data + " ");
-                temp = temp.next;
+                Console.Write("Linked list is: ");
+                while (tempNode != null)
+                {
+                    Console.Write(tempNode.Data + " ");
+                    tempNode = tempNode.Next;
+                }
+                Console.WriteLine("\n");
             }
-               Console.WriteLine("\n");
         }
     }
 }

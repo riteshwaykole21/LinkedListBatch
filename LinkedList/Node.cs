@@ -8,16 +8,16 @@ namespace LinkedList
 {
     public class Node
     {
-        public int data;
-        public Node next;
+        public int Data;
+        public Node Next;
         public Node(int data)
         {
-            this.data = data;   
+            Data = data;
         }
-        public Node(int data,Node next)
+        public Node(int data, Node next)
         {
-            data = data;
-            next = next;
+            Data = data;
+            Next = next;
         }
     }
 }
