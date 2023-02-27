@@ -26,6 +26,8 @@ namespace LinkedList
                 tempNode.Next = newNode;
             }
         }
+
+
         public void AddFirst(int data)
         {
             Node newNode = new Node(data);
@@ -49,6 +51,7 @@ namespace LinkedList
                 tailNode = newNode;
             }
         }
+
         public void ReversOrder(int data)
         {
             Node newNode = new Node(data);
@@ -72,7 +75,66 @@ namespace LinkedList
             this.headNode = this.headNode.Next;
             Console.WriteLine("the first element is deleted");
         }
+        public void RemoveLastNode()
+        {
+            if (headNode == null)
+            {
+                Console.WriteLine("lined list is empty");
+            }
+            if (headNode.Next == null)
+            {
+                headNode = null;
+            }
+            else
+            {
+                Node laastNode = this.headNode;
+                while (laastNode.Next.Next != null)
+                {
+                    laastNode = laastNode.Next;
+                }
+                laastNode.Next = null;
+                Console.WriteLine("the last element is deleted");
+            }
+        }
+        public void Find(int FindData)
+        {
+            int count = 0;
+            Node tempNode = this.headNode;
+            if (tempNode == null)
+                Console.WriteLine("Linke list is empty");
+            else
+            {
+                while (tempNode != null)
+                {
+                    if (tempNode.Data.Equals(FindData))
+                    {
+                        count++;
+                    }
+                    tempNode = tempNode.Next;
+                }
+            }
+            if (count > 0)
+                Console.WriteLine(FindData + " data found " + count + ": time ");
+            else
+                Console.WriteLine(" data not found\n");
+        }
 
+        public void Size()
+        {
+            int size = 0;
+            Node tempNode = this.headNode;
+            if (tempNode == null)
+                Console.WriteLine("Linke list is empty");
+            else
+            {
+                while (tempNode != null)
+                {
+                    tempNode = tempNode.Next;
+                    size++;
+                }
+                Console.WriteLine("Size :" + size);
+            }
+        }
         public void Display()
         {
             Node tempNode = this.headNode;
